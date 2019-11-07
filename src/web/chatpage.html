@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Realtime chatting platform</title>
+    <link rel="stylesheet" href="css/webcss.css">
+    <style media="screen">
+      body{
+       box-sizing: border-box;
+       margin: 0;
+       display: flex;
+       flex-direction: row;
+       height: 100vh;
+       overflow-y: hidden;
+      }
+
+      .left-panel{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 20vw;
+        height: 100vh;
+        border: 1px solid black;
+        margin: 0;
+        overflow-y: scroll;
+      }
+      .full{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 78vw;
+        height: 100vh;
+        border: 1px solid black;
+        margin: 0;
+      }
+      .msgclass{
+        width: 40vw;
+        height: 15px;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: white;
+      }
+      .demo{
+        border: 1px solid black;
+      }
+      .sub{
+        background-color: green;
+        width: 100px;
+        height: 50px;
+        margin-left: 40px;
+        border-radius: 5px;
+      }
+      .type-container{
+        margin-left: 30px;
+        position: fixed;
+      }
+      .show-container{
+        margin: 20px;
+        position: relative;
+        height: 430px;
+        width: 60vw;
+        padding: 20px;
+        overflow-y: auto;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left-panel">
+      <p>Hello there </p>
+    </div>
+    <div class="full">
+      <main id="mainOne" class="main">
+        <div class="show-container">
+          <h1>Type is after this</h1>
+          <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+        </div>
+        <div class="type-container">
+          <form class="msgtype" action="/sendmsg" method="post">
+            <input type="text" name="msg" value="" placeholder="type your message here" class="msgclass"> <button type="submit" class="sub" name="submit-button">Send</button>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
