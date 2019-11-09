@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Realtime chatting platform</title>
+  <!--  <link rel="stylesheet"type="text/css"  href="../css/webcss.css"> -->
+    <script>
+      function submbtn(){
+
+      }
+      function validity(){
+        var flag = true;
+        var val = document.forms["userform"]["uname"].value;
+        if(val === ""){
+          alert('Username column empty!');
+          flag = false;
+      }
+      return flag;
+      }
+
+    </script>
+    <style>
+      body{
+  padding-top: 1rem;
+}
+.main{
+  background-color: grey;
+  font-family: fantasy;
+  height: 80vh;
+  width: 30vw;
+  padding: auto;
+  display: block;
+  border: 1px solid black;
+  border-radius: 5px;
+  position: absolute;
+  margin-left: 37vw;
+  animation-name: entry;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0.8;
+}
+@keyframes entry {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0.8;
+  }
+}
+.userjoin{
+  height: 100px;
+  width: 70%;
+  margin: auto;
+}
+.namebox{
+  border-radius: 3px;
+  width: 50vh;
+  height: auto;
+}
+.txt{
+  text-align: center;
+  font-family: fantasy;
+  font-style: oblique;
+  position: relative;
+  margin: 30px;
+}
+#uname{
+  height: 5vh;
+  width: 50vh;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-family: Open Sans;
+}
+#subm{
+  height: 5vh;
+  width: 50vh;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  box-shadow: -10px 10px 20px black;
+}
+#uname:hover{
+  background-color: lightgrey;
+}
+#subm:hover{
+  background-color: lightgrey;
+}
+    </style>
+  </head>
+  <body>
+    <div class="full">
+      <main id="mainOne" class="main">
+        <div class="first">
+          <header class="head">
+              <h3 class="txt">Enter a username to continue</h3>
+          </header>
+              <hr>
+            <form class="userjoin" id="unamejoin" action="/sub" onsubmit="validity()" name="userform" method="POST">
+              <div class="namebox">
+                <input type="text" name="uname" id="uname" placeholder="type username here">
+              </div>
+              <div class="submbtn">
+                <button type="submit" name="unamesub" id="subm">Proceed to Chat</button>
+              </div>
+            </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

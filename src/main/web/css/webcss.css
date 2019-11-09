@@ -1,0 +1,67 @@
+body{
+  padding-top: 1rem;
+}
+.main{
+  background-color: grey;
+  font-family: fantasy;
+  height: 80vh;
+  width: 30vw;
+  padding: auto;
+  display: block;
+  border: 1px solid black;
+  border-radius: 5px;
+  position: absolute;
+  margin-left: 37vw;
+  animation-name: entry;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0.8;
+}
+@keyframes entry {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0.8;
+  }
+}
+.userjoin{
+  height: 100px;
+  width: 70%;
+  margin: auto;
+}
+.namebox{
+  border-radius: 3px;
+  width: 50vh;
+  height: auto;
+}
+.txt{
+  text-align: center;
+  font-family: fantasy;
+  font-style: oblique;
+  position: relative;
+  margin: 30px;
+}
+#uname{
+  height: 5vh;
+  width: 50vh;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-family: Open Sans;
+}
+#subm{
+  height: 5vh;
+  width: 50vh;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  box-shadow: -10px 10px 20px black;
+}
+#uname:hover{
+  background-color: lightgrey;
+}
+#subm:hover{
+  background-color: lightgrey;
+}
