@@ -1,6 +1,7 @@
 package main
 
 import (
+	"chatServer/src/secondary"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -25,6 +26,7 @@ func main() {
 	router.POST("/sub", func(c *gin.Context) {
 		router.LoadHTMLGlob("web/template/chatpage.html") //Loading html page chatpage
 		name := c.PostForm("uname")
+		secondary.Chatupdate()
 		c.HTML( //To open html page instead of just json data
 			http.StatusOK,
 			"chatpage.html",
@@ -32,6 +34,15 @@ func main() {
 				"title": "Chat Page",
 				"uname": name,
 			})
+			c.JSON(
+				http.StatusOK,
+				gin.H{
+					"title": "Chat Page",
+					"uname": name,
+				})
+	})
+	router.POST("/loaddata", func(c *gin.Context) {
+
 	})
 	router.Run(":8080") //Running router on port 0.0.0.0:8080
 }

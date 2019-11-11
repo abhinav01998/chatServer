@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Realtime chatting platform</title>
-    <link rel="stylesheet" href="css/webcss.css">
+    <link rel="stylesheet" href="stylesheets/webcss.css">
     <style media="screen">
       body{
        box-sizing: border-box;
@@ -72,9 +72,8 @@
     </div>
     <div class="full">
       <main id="mainOne" class="main">
-        <div class="show-container">
-          <h1>Type is after this</h1>
-          <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+        <div class="show-container" id="messages">
+          
         </div>
         <div class="type-container">
           <form class="msgtype" action="/sendmsg" method="post">
@@ -83,5 +82,31 @@
         </div>
       </main>
     </div>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+    function init() {
+      var xmlhttp = new XMLHttpRequest();
+      xhr.open('POST', 'http://localhost:8080/sub');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.onload = function() {
+          if (xhr.status === 200) {
+            console.log(JSON.parse(xhr.responseText))
+          }
+      };
+      xhr.send(JSON.stringify({
+          uname: 'yoshie',
+      }));
+    }
+      $(document).ready( function(){
+        $('#messages').load('/reload.html');
+        reload();
+      });
+      function reload() {
+        setTimeout( function() {
+          $('#messages').fadeOut('slow').load('/reload.html').fadeIn('slow');
+          reload()
+        }, 200);
+      }
+    </script>
   </body>
 </html>
